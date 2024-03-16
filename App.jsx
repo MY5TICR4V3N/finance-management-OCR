@@ -1,13 +1,26 @@
-import React from 'react'
-import { StyleSheet, Text,View,SafeAreaView} from 'react-native'
 
-const FinManager= () => {
+import React from 'react'
+import { 
+    StyleSheet,
+    Text,
+    View,
+    SafeAreaView,
+    TextInput,
+    Button,
+    StatusBar,
+    Image
+} from 'react-native'
+import LoadingScreen from './src/screens/LoadingScreen' //loading screen
+
+
+const FinManagerApp= () => {
     return(
-        <View style={{flex:1}}>
-            
-        </View>
+        <LoadingScreen/>
     )
 }
 
+const styles = StyleSheet.create({
+    
+   });
 
-export default FinManager
+export default FinManagerApp
