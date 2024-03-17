@@ -2,6 +2,18 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/OpenSans.ttf",
+      "sha1": "76ea5d4c70539ad9b0e7faf7e4fbe3bae8a961c7"
+    },
+    {
+      "path": "src/assets/fonts/OpenSansBold.ttf",
+      "sha1": "953814da1b753763dfa5a7ecc18bdbb14890e16b"
+    },
+    {
+      "path": "src/assets/fonts/OpenSansSemiBold.ttf",
+      "sha1": "9b1adfbc773bb8bd1e6c4ca85c34441a43c2bc54"
+    },
+    {
       "path": "src/assets/fonts/PatuaOne.ttf",
       "sha1": "d9c0328bc6188860c9bfa1d67e2f53fd64f49bfb"
     }

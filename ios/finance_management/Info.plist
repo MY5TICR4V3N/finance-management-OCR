@@ -50,6 +50,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>PatuaOne.ttf</string>
+		<string>OpenSans.ttf</string>
+		<string>OpenSansBold.ttf</string>
+		<string>OpenSansSemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
