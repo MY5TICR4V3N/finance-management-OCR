@@ -2,6 +2,10 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "src/assets/fonts/MaterialIcons.ttf",
+      "sha1": "7e02c3f005532ff4d24148567c84089756a7848a"
+    },
+    {
       "path": "src/assets/fonts/OpenSans.ttf",
       "sha1": "76ea5d4c70539ad9b0e7faf7e4fbe3bae8a961c7"
     },
