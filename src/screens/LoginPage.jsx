@@ -18,7 +18,7 @@ import { TextInput,Button } from 'react-native-paper'
 
 const LoginPage= () => {
     return(
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor:"white"}}>
             <WhiteStatus/>
             <Image
                 source={require('../assets/images/Carrot.png')}

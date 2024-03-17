@@ -14,7 +14,7 @@ import WhiteStatus from '../components/WhiteStatus'
 
 const GetStarted= () => {
     return(
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container,{backgroundColor:"white"}]}>
             <WhiteStatus/>
             <View style={[styles.header]}>
                 <Text style={styles.headerText}>
