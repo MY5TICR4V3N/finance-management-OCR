@@ -1,25 +1,15 @@
 
 import React from 'react'
-import { 
-    StyleSheet,
-    Text,
-    View,
-    SafeAreaView,
-    StatusBar,
-    Image
-} from 'react-native'
-import WhiteStatus from './src/components/WhiteStatus'
+import LoginPage from './src/screens/LoginPage'
+
+
+
+
 
 const FinManagaer= () => {
     return(
-        <SafeAreaView>
-            <WhiteStatus/>
-        </SafeAreaView>
+    <LoginPage/>
     )
 }
-
-const styles = StyleSheet.create({
-    
-   });
 
 export default FinManagaer

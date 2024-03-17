@@ -10,11 +10,12 @@ import {
 } from 'react-native'
 import { Button } from 'react-native'
 
+import WhiteStatus from '../components/WhiteStatus'
 
 const GetStarted= () => {
     return(
         <SafeAreaView style={styles.container}>
-            <StatusBar backgroundColor={"#FFFFFF"} barStyle={"dark-content"}/>
+            <WhiteStatus/>
             <View style={[styles.header]}>
                 <Text style={styles.headerText}>
                     Welcome to 
@@ -48,8 +49,9 @@ const GetStarted= () => {
                     title='Get Started!'
                     color={"#24A19C"}
                 />
+                
             </View>
-
+            
 
 
         </SafeAreaView>
@@ -60,7 +62,8 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         alignItems:"center",
-        // justifyContent:"center"
+        justifyContent:"center",
+        flexDirection:"column",
         
     },
     header:{
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
 
     },
     ImageStyle:{
-        marginTop:110
+        marginTop:110,
     },
     detailHead:{
         fontFamily:"OpenSansSemiBold",
