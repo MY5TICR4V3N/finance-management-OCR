@@ -14,6 +14,10 @@
       "sha1": "9292ee344b331c5959c7b130d1a2df5543dfa58a"
     },
     {
+      "path": "src/assets/fonts/OpenSansLightItalic.ttf",
+      "sha1": "b09eeda714e31150395fd24a603684e0fc9a3b16"
+    },
+    {
       "path": "src/assets/fonts/OpenSansSemiBold.ttf",
       "sha1": "9b1adfbc773bb8bd1e6c4ca85c34441a43c2bc54"
     },
