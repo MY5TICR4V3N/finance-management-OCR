@@ -7,7 +7,8 @@ import {
     View,
     Text,
     FlatList,
-    Image
+    Image,
+    TouchableOpacity
  } from 'react-native'
 import { Button } from 'react-native-paper'
 
@@ -27,15 +28,18 @@ const data = [
     }
 ]
 
-const Item =({username}) => {
+const Item =({username,navigation}) => {
     return(
         <View style={styles.profileContainer}>
             <View>
-                <View style={styles.profileImageStyle}>
+                <TouchableOpacity style={styles.profileImageStyle}
+                    onPress={()=>navigation.navigate('list')}
+                >
                     <Image
                         source={require('../assets/images/defaultProfile.png')}
+                        
                     />
-                </View>
+                </TouchableOpacity>
             </View>
         
             <Text style={styles.profileName}>{username}</Text>
@@ -44,9 +48,9 @@ const Item =({username}) => {
 
 }
 
-const UsersScreen= () => {
+const UsersScreen= ({navigation}) => {
     return(
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor:"white"}}>
         <WhiteStatus/>
         <View style={styles.headinhWrapper}>
         <Text style={styles.heading}>
@@ -55,7 +59,7 @@ const UsersScreen= () => {
         </View>
         <FlatList
             data={data}
-            renderItem={({ item }) => <Item username={item.user} />}
+            renderItem={({ item }) => <Item username={item.user} navigation={navigation}/>}
             keyExtractor={item => item.id}
             style={{alignSelf:"center",marginTop:60}}
             />

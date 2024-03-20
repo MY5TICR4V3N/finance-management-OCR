@@ -5,22 +5,17 @@ import {
 	SafeAreaView,
 	View,
 	Text,
-  FlatList
+  FlatList,
 } from 'react-native';
 import ListHead from '../components/ListHead';
 import ListSubBar from '../components/ListSubBar';
 import { CheckBox } from '@rneui/themed';
 
 
-
+//family list
 const familydata = [{"itemf":"apple"},{"itemf":"cake"},{"itemf":"orange" }]
-
+// personal list
 const privatedata = [{"item":"water melon"},{"item":"water bottle"}]
-
-
-
-
-
 
 
 
@@ -29,16 +24,13 @@ const ListView = () => {
 
   const [ispressed,setpressed] = useState(false)
 
-  const togglePressed=()=>{
-    setpressed(!ispressed)
-  }
 
   const Structure =({itemname})=>{
     return(
       <View style={{flexDirection:"row",}}>
       <CheckBox
       checked={ispressed}
-      onPress={togglePressed}
+      onPress={()=>{setpressed(!ispressed)}}
       style={styles.checkboxStyle}
       title={itemname}
       size={24}
@@ -53,7 +45,7 @@ const ListView = () => {
 
 
 	return (
-		<SafeAreaView style={{flex: 1}}>
+		<SafeAreaView style={{flex: 1,backgroundColor:"white"}}>
 			<WhiteStatus />
 
 			<ListHead topSpace={20} />

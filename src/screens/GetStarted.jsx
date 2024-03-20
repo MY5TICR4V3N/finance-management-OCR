@@ -12,7 +12,7 @@ import { Button } from 'react-native'
 
 import WhiteStatus from '../components/WhiteStatus'
 
-const GetStarted= () => {
+const GetStarted= ({navigation}) => {
     return(
         <SafeAreaView style={[styles.container,{backgroundColor:"white"}]}>
             <WhiteStatus/>
@@ -48,6 +48,7 @@ const GetStarted= () => {
                 <Button
                     title='Get Started!'
                     color={"#24A19C"}
+                    onPress={()=>{navigation.navigate('login')}}
                 />
                 
             </View>

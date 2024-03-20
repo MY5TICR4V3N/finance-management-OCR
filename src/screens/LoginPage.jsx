@@ -16,7 +16,7 @@ import { useState } from 'react'
 
 
 
-const LoginPage= () => {
+const LoginPage= ({navigation}) => {
     const [isVisible,setIsVisible] = useState(false)
 
     const setVisiblity =()=> {
@@ -60,6 +60,7 @@ const LoginPage= () => {
                     height={60}
                     labelStyle={{fontSize:18}}
                     style={styles.buttonstyle}
+                    onPress={()=>navigation.navigate('users')}
                     >
                         Log In
                     </Button>
