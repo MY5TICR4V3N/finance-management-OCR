@@ -1,7 +1,14 @@
 {
   "migIndex": 1,
   "data": [
-
+    {
+      "path": "src/assets/fonts/GentiumBold.ttf",
+      "sha1": "752b18d22c8639815745659a95eb2c5f88839b3d"
+    },
+    {
+      "path": "src/assets/fonts/GentiumRegular.ttf",
+      "sha1": "e4a2fdebb2aa359cd3eed9772750ee30d1185a2b"
+    },
     {
       "path": "src/assets/fonts/OpenSans.ttf",
       "sha1": "76ea5d4c70539ad9b0e7faf7e4fbe3bae8a961c7"

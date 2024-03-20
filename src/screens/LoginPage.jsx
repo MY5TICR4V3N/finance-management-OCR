@@ -10,13 +10,18 @@ import {
 } from 'react-native'
 import WhiteStatus from '../components/WhiteStatus'
 import { TextInput,Button } from 'react-native-paper'
-
+import { useState } from 'react'
 
 
 
 
 
 const LoginPage= () => {
+    const [isVisible,setIsVisible] = useState(false)
+
+    const setVisiblity =()=> {
+        setIsVisible(!isVisible);
+    }
     return(
         <SafeAreaView style={{backgroundColor:"white"}}>
             <WhiteStatus/>
@@ -39,7 +44,8 @@ const LoginPage= () => {
                     Password
                 </Text>
                 <TextInput
-                secureTextEntry
+                secureTextEntry={!isVisible}
+                right={<TextInput.Icon icon={isVisible ? "eye-off" : "eye"} onPress={setVisiblity} />}
                 />
                 <Text style={styles.forget}>
                     Forgot Password?

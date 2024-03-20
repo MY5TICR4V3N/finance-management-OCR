@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React,{useState} from 'react'
 import { 
     StyleSheet,
     Text,
@@ -17,6 +17,11 @@ import { TextInput,Button } from 'react-native-paper'
 
 
 const SignUpPage= () => {
+    const [isVisible,setIsVisible] = useState(false)
+
+    const setVisiblity =()=> {
+        setIsVisible(!isVisible);
+    }
     return(
         <SafeAreaView style={{backgroundColor:"white"}}>
             <WhiteStatus/>
@@ -45,7 +50,8 @@ const SignUpPage= () => {
                 Password
                 </Text>
             <TextInput
-            secureTextEntry
+            secureTextEntry={!isVisible}
+            right={<TextInput.Icon icon={isVisible ? "eye-off" : "eye"} onPress={setVisiblity} />}
             />
                 
                 <Text style={styles.privpol}>

@@ -10,20 +10,20 @@ import {
     Image
  } from 'react-native'
 import { Button } from 'react-native-paper'
-import {Feather} from 'react-native-vector-icons/Feather';
+
 const data = [
     {
-        id:"1",
-        user:"kashyap",
+        "id":"1",
+        "user":"kashyap",
 
     },
     {
-        id:'2',
-        user:"alvis"
+        "id":'2',
+        "user":"alvis"
     },
     {
-        id:'3',
-        user:"akshay"
+        "id":'3',
+        "user":"akshay"
     }
 ]
 
@@ -70,7 +70,6 @@ const UsersScreen= () => {
                 
             >Add Users</Button>
         </View >
-        
         </SafeAreaView>
         
     )

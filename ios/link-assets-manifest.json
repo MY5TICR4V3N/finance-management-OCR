@@ -2,8 +2,12 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/MaterialIcons.ttf",
-      "sha1": "7e02c3f005532ff4d24148567c84089756a7848a"
+      "path": "src/assets/fonts/GentiumBold.ttf",
+      "sha1": "752b18d22c8639815745659a95eb2c5f88839b3d"
+    },
+    {
+      "path": "src/assets/fonts/GentiumRegular.ttf",
+      "sha1": "e4a2fdebb2aa359cd3eed9772750ee30d1185a2b"
     },
     {
       "path": "src/assets/fonts/OpenSans.ttf",
