@@ -6,7 +6,7 @@ import {
 import {Appbar} from 'react-native-paper';
 
 
-const ListHead = ({topSpace}) => {
+const ListHead = ({topSpace,navigation}) => {
 //   const {topSpace} = props;
   return (
     <View style={{marginTop: topSpace}}>
@@ -14,7 +14,9 @@ const ListHead = ({topSpace}) => {
       <Appbar.Header mode="center-aligned" style={styles.barstyle}>
         <Appbar.Content title=" List" titleStyle={styles.title} />
 
-        <Appbar.Action icon={'gear'} onPress={() => {}} size={30} />
+        <Appbar.Action icon={'gear'}  size={30} 
+          onPress={() => navigation.navigate('setting')}
+        />
       </Appbar.Header>
     </View>
   );

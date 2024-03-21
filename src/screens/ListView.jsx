@@ -19,7 +19,7 @@ const privatedata = [{"item":"water melon"},{"item":"water bottle"}]
 
 
 
-const ListView = () => {
+const ListView = ({navigation}) => {
 
 
   const [ispressed,setpressed] = useState(false)
@@ -48,7 +48,7 @@ const ListView = () => {
 		<SafeAreaView style={{flex: 1,backgroundColor:"white"}}>
 			<WhiteStatus />
 
-			<ListHead topSpace={20} />
+			<ListHead topSpace={20} navigation={navigation}/>
 			<ListSubBar leftText={'Family'} rightText={'Add item'} />
 			<View style={styles.liststyle}>
 				<FlatList data={familydata}
