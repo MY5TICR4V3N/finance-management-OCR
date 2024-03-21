@@ -16,7 +16,7 @@ import { TextInput,Button } from 'react-native-paper'
 
 
 
-const SignUpPage= () => {
+const SignUpPage= ({navigation}) => {
     const [isVisible,setIsVisible] = useState(false)
 
     const setVisiblity =()=> {
@@ -68,15 +68,17 @@ and Privacy Policy.
                     height={60}
                     labelStyle={{fontSize:18}}
                     style={styles.buttonstyle}
-                    // onPress={<LoginPage/>}
+                    
                     >
-                        Log In
+                        Sign up
                     </Button>
 
             </View>
-            <Text style={styles.lastText}>
+            <Text
+            onPress={()=>{navigation.navigate('login')}}
+            style={styles.lastText}>
                 Already have an account?  
-                <Text style={{color:"#53B175"}}> Log In</Text>
+                <Text style={{color:"#53B175"}}> Log in</Text>
             </Text>
 
         </SafeAreaView>

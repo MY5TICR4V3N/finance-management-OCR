@@ -10,7 +10,7 @@ import SignUpPage from './src/screens/SignUpPage'
 import LoginPage from './src/screens/LoginPage'
 import UsersScreen from './src/screens/UsersScreen'
 import ListView from './src/screens/ListView'
-
+import Settings from './src/screens/Settings';
 
 
 import { PaperProvider } from 'react-native-paper';
@@ -31,7 +31,7 @@ const FinManagaer= () => {
             icon: props => <AwesomeIcon {...props} />,
           }}>
             
-            <NavigationContainer>
+            {/* <NavigationContainer>
                 <Stack.Navigator initialRouteName="first" >
                 <Stack.Screen name='first' 
                     component={GetStarted}
@@ -46,9 +46,12 @@ const FinManagaer= () => {
                 <Stack.Screen name = "list"
                     component={ListView}
                     options={{headerShown:false}} />
+                <Stack.Screen name = 'signup'
+                    component={SignUpPage}
+                    options={{headerShown:false}} />
                 </Stack.Navigator>
-            </NavigationContainer>
-            {/* <ListView/> */}
+            </NavigationContainer> */}
+            <Settings/>
         </PaperProvider>
 
     )

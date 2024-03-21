@@ -12,7 +12,7 @@ import WhiteStatus from '../components/WhiteStatus'
 import { TextInput,Button } from 'react-native-paper'
 import { useState } from 'react'
 
-
+import BigButton from '../components/BigButton'
 
 
 
@@ -53,22 +53,14 @@ const LoginPage= ({navigation}) => {
 
             </View>
             <View style={styles.buttonWrapper}>
-                <Button
-                    mode='outlined'
-                    buttonColor='#24A19C'
-                    textColor='white'
-                    height={60}
-                    labelStyle={{fontSize:18}}
-                    style={styles.buttonstyle}
-                    onPress={()=>navigation.navigate('users')}
-                    >
-                        Log In
-                    </Button>
+            <BigButton name={"login"} topage={"users"} navigation={navigation}/>
 
             </View>
             <Text style={styles.lastText}>
                 Dont have an account?  
-                <Text style={{color:"#53B175"}}> Signup</Text>
+                <Text 
+                    onPress={()=>navigation.navigate('signup')}
+                style={{color:"#53B175"}}> Signup</Text>
             </Text>
 
         </SafeAreaView>
@@ -120,12 +112,7 @@ const styles = StyleSheet.create({
         marginLeft:10,
         marginRight:10
     },
-    buttonstyle:{
 
-        justifyContent:"center",
-
-
-    },
     lastText:{
         marginTop:15,
         alignSelf:"center",
