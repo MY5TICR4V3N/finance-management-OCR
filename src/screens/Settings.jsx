@@ -9,7 +9,7 @@ import {
 import WhiteStatus from '../components/WhiteStatus'
 import { Divider } from "react-native-paper";
 import BigButton from "../components/BigButton";
-
+import SettingsItem from "../components/SettingsItem";
 
 const Settings=({navigate})=>{
     return (
@@ -30,10 +30,16 @@ const Settings=({navigate})=>{
                     >basil@kashyap.com</Text>
                 </View>
 			</View>
-            <Divider
-            bold
-            />
-            <View style={{marginHorizontal:20}}>
+            <Divider bold />
+            <SettingsItem name={"Edit Avatar"} />
+            <Divider bold />
+            <SettingsItem name={"Change User"} />
+            <Divider bold />
+            <SettingsItem name={"Help"} />
+            <Divider bold />
+            <SettingsItem name={"About"} />
+            <Divider bold />
+            <View style={{marginHorizontal:20,marginTop:90}}>
             <BigButton name={"Log out"}/>
             </View>
         
@@ -66,7 +72,10 @@ const styles= StyleSheet.create({
         color:"black",
         fontSize:16,
 
-    }
+    },
+    circularImage: {
+        overflow: 'hidden',
+      },
 })
 
 export default Settings
