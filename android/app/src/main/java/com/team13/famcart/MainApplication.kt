@@ -1,4 +1,4 @@
-package com.finance_management
+package com.team13.famcart
 
 import android.app.Application
 import com.facebook.react.PackageList

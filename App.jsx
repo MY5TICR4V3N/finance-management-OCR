@@ -11,7 +11,7 @@ import StackNav from './src/navigation/StackNav';
 
 
 
-const FinManagaer = () => {
+const FamCart = () => {
 	return (
 		<PaperProvider
 			settings={{
@@ -22,4 +22,4 @@ const FinManagaer = () => {
 	);
 };
 
-export default FinManagaer
+export default FamCart

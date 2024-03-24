@@ -1,4 +1,4 @@
-package com.finance_management
+package com.team13.famcart
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

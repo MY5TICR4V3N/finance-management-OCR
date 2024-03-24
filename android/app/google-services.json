@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774457950682",
+    "project_id": "famcart-be20c",
+    "storage_bucket": "famcart-be20c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774457950682:android:116712637ec27f048c40e3",
+        "android_client_info": {
+          "package_name": "com.team13.famcart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO42jlUHTOKbd8zJR-wxfUNwC_DFAmOE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
