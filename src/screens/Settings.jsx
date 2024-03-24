@@ -31,13 +31,13 @@ const Settings=({navigation})=>{
                 </View>
 			</View>
             <Divider bold />
-            <SettingsItem name={"Edit Avatar"} />
+            <SettingsItem name={" Edit Avatar"} iconname={"edit"} />
             <Divider bold />
-            <SettingsItem name={"Change User"} />
+            <SettingsItem name={" Change User"} iconname={"users"}/>
             <Divider bold />
-            <SettingsItem name={"Help"} />
+            <SettingsItem name={" Help"} iconname={"help-circle"}/>
             <Divider bold />
-            <SettingsItem name={"About"} />
+            <SettingsItem name={" About"} iconname={"info"}/>
             <Divider bold />
             <View style={styles.buttonWrapper}>
             <BigButton name={"Log out"}
