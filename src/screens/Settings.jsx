@@ -11,9 +11,9 @@ import { Divider } from "react-native-paper";
 import BigButton from "../components/BigButton";
 import SettingsItem from "../components/SettingsItem";
 
-const Settings=({navigate})=>{
+const Settings=({navigation})=>{
     return (
-		<SafeAreaView style={{flex:1}}>
+		<SafeAreaView style={{flex:1,flexDirection:"column",backgroundColor:"white"}}>
 			<WhiteStatus />
 			<View style={[styles.headWrapper]}>
 				<View style={styles.imageStyle}>
@@ -39,8 +39,11 @@ const Settings=({navigate})=>{
             <Divider bold />
             <SettingsItem name={"About"} />
             <Divider bold />
-            <View style={{marginHorizontal:20,marginTop:90}}>
-            <BigButton name={"Log out"}/>
+            <View style={styles.buttonWrapper}>
+            <BigButton name={"Log out"}
+            topage={'login'}
+            navigation={navigation}
+            />
             </View>
         
 		</SafeAreaView>
@@ -76,6 +79,13 @@ const styles= StyleSheet.create({
     circularImage: {
         overflow: 'hidden',
       },
+    buttonWrapper:{
+        marginHorizontal:20,
+        marginTop:"30%",
+        flexDirection:"column",
+        // backgroundColor:"red",
+        
+    }
 })
 
 export default Settings

@@ -11,6 +11,12 @@ import ListHead from '../components/ListHead';
 import ListSubBar from '../components/ListSubBar';
 import { CheckBox } from '@rneui/themed';
 
+//tab navigation
+import { useNavigation } from '@react-navigation/native';
+import { Button } from 'react-native-paper';
+
+
+
 
 //family list
 const familydata = [{"itemf":"apple"},{"itemf":"cake"},{"itemf":"orange" }]
@@ -20,7 +26,8 @@ const privatedata = [{"item":"water melon"},{"item":"water bottle"}]
 
 
 const ListView = ({navigation}) => {
-
+  
+  // const navigation = useNavigation();
 
   const [ispressed,setpressed] = useState(false)
 
@@ -43,12 +50,12 @@ const ListView = ({navigation}) => {
   
   }
 
-
+  const TopName = " ";
 	return (
 		<SafeAreaView style={{flex: 1,backgroundColor:"white"}}>
 			<WhiteStatus />
-
-			<ListHead topSpace={20} navigation={navigation}/>
+      
+			<ListHead topage={'setting'} navigation={navigation} title={TopName.concat("List")}/>
 			<ListSubBar leftText={'Family'} rightText={'Add item'} />
 			<View style={styles.liststyle}>
 				<FlatList data={familydata}
@@ -64,7 +71,8 @@ const ListView = ({navigation}) => {
         />
 
       </View>
-      
+    
+
 
 
 		</SafeAreaView>

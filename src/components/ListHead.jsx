@@ -6,13 +6,13 @@ import {
 import {Appbar} from 'react-native-paper';
 
 
-const ListHead = ({topSpace,navigation}) => {
+const ListHead = ({navigation,topage,title}) => {
 //   const {topSpace} = props;
   return (
-    <View style={{marginTop: topSpace}}>
+    <View style={{marginTop: 20}}>
       {/* <StatusBar backgroundColor={'#FFFFFF'} barStyle={'dark-content'} /> */}
       <Appbar.Header mode="center-aligned" style={styles.barstyle}>
-        <Appbar.Content title=" List" titleStyle={styles.title} />
+        <Appbar.Content title={title} titleStyle={styles.title} />
 
         <Appbar.Action icon={'gear'}  size={30} 
           onPress={() => navigation.navigate('setting')}
@@ -21,6 +21,8 @@ const ListHead = ({topSpace,navigation}) => {
     </View>
   );
 };
+
+
 
 const styles = StyleSheet.create({
     title:{
