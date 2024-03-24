@@ -6,7 +6,7 @@ import { List, Camera, PieChart } from "react-native-feather";
 import ListView from "../screens/ListView";
 import Scanner from "../screens/Scanner";
 import Expense from "../screens/Expense";
-import Settings from "../screens/Settings";
+
 
 const Tab = createBottomTabNavigator();
 
@@ -33,9 +33,10 @@ const TabNav = () => {
         name="Scanner"
         component={Scanner}
         options={{
+          
           headerShown: false,
 		  tabBarLabel:()=> null,
-          tabBarIcon: () => <Camera color={"#24A19C"} height={30} width={30} />,
+          tabBarIcon: () => <Camera color={"#24A19C"} height={30} width={30}  />,
         }}
       />
       <Tab.Screen

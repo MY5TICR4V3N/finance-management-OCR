@@ -1,48 +1,53 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Camera } from 'react-native-vision-camera';
+import React, {useEffect, useState} from 'react';
+import {
+  StyleSheet,
+  Text, 
+  SafeAreaView, 
+  
+  View
+  } from 'react-native';
+import {
+	useCameraDevice,
+	Camera,
+	useCameraPermission,
+} from 'react-native-vision-camera';
 
 const Scanner = () => {
-  const [hasPermission, setHasPermission] = useState(false);
-  const cameraRef = useRef(null);
+	const {hasPermission, requestPermission} = useCameraPermission();
 
-  useEffect(() => {
-    (async () => {
-      const status = await Camera.requestCameraPermission();
-      setHasPermission(status === 'authorized');
-    })();
-  }, []);
+	// console.log(hasPermission)
 
-  const takePicture = async () => {
-    if (cameraRef.current) {
-      const photo = await cameraRef.current.takePhoto();
-      console.log('photo', photo);
-    }
-  };
+	useEffect(() => {
+		if (!hasPermission) {
+			requestPermission();
+		}
+	}, [hasPermission]);
 
-  return (
-    <View style={styles.container}>
-      {hasPermission ? (
-        <Camera
-          style={styles.camera}
-          ref={cameraRef}
-          photo={true}
-          enableHighQualityPhotos={true}
-        />
-      ) : (
-        <View />
-      )}
-    </View>
-  );
+	const device = useCameraDevice('back');
+ 
+
+	if (!device) {
+		<Text>not found</Text>;
+	}
+
+	const [isActive, setIsActive] = useState(false);
+	useEffect(() => {
+		setTimeout(() => {
+			setIsActive(true);
+		}, 500);
+	}, []);
+
+	return (
+		<View style={{flex: 1}}>
+			<Camera
+				device={device}
+				isActive={isActive}
+				style={StyleSheet.absoluteFill}
+			/>
+		</View>
+	);
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  camera: {
-    flex: 1,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default Scanner;

@@ -67,7 +67,7 @@ const FinManagaer = () => {
 					/>
 				</Stack.Navigator>
 			</NavigationContainer>
-			
+			{/* <Scanner/> */}
 		</PaperProvider>
 	);
 };
