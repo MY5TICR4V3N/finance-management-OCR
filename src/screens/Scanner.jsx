@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState,useRef} from 'react';
 import {
   StyleSheet,
   Text, 
   SafeAreaView, 
-  
+  TouchableOpacity,
   View
   } from 'react-native';
 import {
@@ -11,6 +11,9 @@ import {
 	Camera,
 	useCameraPermission,
 } from 'react-native-vision-camera';
+
+//used to move back to the list
+import { useNavigation } from '@react-navigation/native';
 
 const Scanner = () => {
 	const {hasPermission, requestPermission} = useCameraPermission();
@@ -23,11 +26,22 @@ const Scanner = () => {
 		}
 	}, [hasPermission]);
 
-	const device = useCameraDevice('back');
- 
+	const device = useCameraDevice('front');
+  const camera = useRef(null);
+
+  const { navigate } = useNavigation();
+  const  Capture=async ()=> {
+    const photo = await camera.current.takePhoto({
+      flash: 'on'
+    })
+    console.log ('taken')
+
+    //to be removed later
+    navigate('ListView')
+  }
 
 	if (!device) {
-		<Text>not found</Text>;
+		<Text>cameera not found</Text>;
 	}
 
 	const [isActive, setIsActive] = useState(false);
@@ -37,17 +51,46 @@ const Scanner = () => {
 		}, 500);
 	}, []);
 
+
+
+
 	return (
-		<View style={{flex: 1}}>
+		<View style={styles.CameraView}>
 			<Camera
+        ref={camera}
 				device={device}
 				isActive={isActive}
+        photo={true}
 				style={StyleSheet.absoluteFill}
 			/>
+      <TouchableOpacity
+      style={styles.shutter}
+      onPress={Capture}
+      > 
+      </TouchableOpacity>
+      
 		</View>
 	);
 };
 
-const styles = StyleSheet.create({});
+const shutterSize=80;
+
+const styles = StyleSheet.create({
+  CameraView:{
+    flex:1,
+    
+    justifyContent:"flex-end"
+  },
+  shutter:{
+    backgroundColor:"white",
+    height:shutterSize,
+    width:shutterSize,
+    alignSelf:"center",
+    marginBottom:50,
+    borderRadius:shutterSize/2,
+    borderWidth:2,
+    borderColor:"black"
+  }
+});
 
 export default Scanner;

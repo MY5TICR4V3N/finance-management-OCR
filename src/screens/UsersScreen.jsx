@@ -49,34 +49,35 @@ const Item =({username,navigation}) => {
 }
 
 const UsersScreen= ({navigation}) => {
-    return(
-        <SafeAreaView style={{backgroundColor:"white"}}>
-        <WhiteStatus/>
-        <View style={styles.headinhWrapper}>
-        <Text style={styles.heading}>
-        who's using?
-        </Text>
-        </View>
-        <FlatList
-            data={data}
-            renderItem={({ item }) => <Item username={item.user} navigation={navigation}/>}
-            keyExtractor={item => item.id}
-            style={{alignSelf:"center",marginTop:60}}
-            />
-        <View style={styles.editProf}>
-            <Button
-                mode='contained'
-                buttonColor='#24A19C'
-            >Remove Users</Button>
-                        <Button
-                mode='contained'
-                buttonColor='#24A19C'
-                
-            >Add Users</Button>
-        </View >
-        </SafeAreaView>
-        
-    )
+    return (
+		<SafeAreaView style={{backgroundColor: 'white'}}>
+			<WhiteStatus />
+			<View style={styles.headinhWrapper}>
+				<Text style={styles.heading}>who's using?</Text>
+			</View>
+			<FlatList
+				data={data}
+				renderItem={({item}) => (
+					<Item
+						username={item.user}
+						navigation={navigation}
+					/>
+				)}
+				keyExtractor={item => item.id}
+				style={{alignSelf: 'center', marginTop: 60}}
+			/>
+			<View style={styles.editProf}>
+				<Button mode="contained" buttonColor="#24A19C"
+                // onPress={()=>{navigation.navigate('list')}}
+                >
+					Remove Users
+				</Button>
+				<Button mode="contained" buttonColor="#24A19C">
+					Add Users
+				</Button>
+			</View>
+		</SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({

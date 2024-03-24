@@ -7,18 +7,16 @@ import ListView from "../screens/ListView";
 import Scanner from "../screens/Scanner";
 import Expense from "../screens/Expense";
 
-
 const Tab = createBottomTabNavigator();
 
 const TabNav = () => {
   return (
     <Tab.Navigator
       initialRouteName="list"
-      screenOptions={{
-        tabBarStyle:styles.BarStyle,
-		
-
-      }}
+      screenOptions={({ route }) => ({
+        tabBarVisible: route.name !== 'Scanner',
+        tabBarStyle:styles.BarStyle
+      })}
     >
       <Tab.Screen
         name="ListView"
