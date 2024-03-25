@@ -45,7 +45,7 @@ const LoginPage= ({navigation}) => {
                 </Text>
                 <TextInput
                 secureTextEntry={!isVisible}
-                right={<TextInput.Icon icon={isVisible ? "eye-off" : "eye"} onPress={setVisiblity} />}
+                right={<TextInput.Icon icon={isVisible ? "eye-slash" : "eye"} onPress={setVisiblity} />}
                 />
                 <Text style={styles.forget}>
                     Forgot Password?
