@@ -17,7 +17,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native-paper';
 
 //family list
-const familydata = [{item: 'apple'}, {item: 'cake'}, {item: 'orange'},];
+const familydata = [{item: 'apple'}, {item: 'cake'}, {item: 'orange'}];
 // personal list
 const privatedata = [{item: 'water melon'}, {item: 'water bottle'}];
 
@@ -63,6 +63,7 @@ const ListView = ({navigation}) => {
 			/>
 			<View style={styles.liststyle}>
 				<FlatList
+				scrollEnabled={false}
 					data={familydata}
 					renderItem={({item}) => (
 						<Structure
@@ -78,7 +79,7 @@ const ListView = ({navigation}) => {
 			<View style={styles.liststyle}>
 				<FlatList
 					data={privatedata}
-          
+					scrollEnabled={false}
 					renderItem={({item}) => (
 						<Structure
 							itemname={item.item}
