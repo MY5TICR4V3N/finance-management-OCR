@@ -23,7 +23,7 @@ const LoginPage = ({navigation}) => {
 		setIsVisible(!isVisible);
 	};
 	return (
-		<SafeAreaView style={{backgroundColor: 'white'}}>
+		<SafeAreaView style={styles.pageWrapper}>
 			<WhiteStatus />
 			<Image
 				source={require('../assets/images/Carrot.png')}
