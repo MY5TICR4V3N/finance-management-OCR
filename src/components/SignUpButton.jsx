@@ -7,8 +7,21 @@ import { useState } from 'react';
 
 const SignUpButton = ({email,password}) => {
     const [isVisible, setIsVisible] = useState(false);
+	const [message,setMessage] = useState('');
 	const onDismissSnackBar = () => setIsVisible(false);
-	const onToggleSnackbar = () => setIsVisible(!isVisible);
+	
+	const SuccessPopup = () =>{ 
+		setMessage("Registered successfully!");
+		setIsVisible(!isVisible);
+	}
+	const AlreadyPopup = () =>{ 
+		setMessage("Email already in Use!");
+		setIsVisible(!isVisible);
+	}
+	const InvalidPopup = () =>{ 
+		setMessage("Email address Invalid");
+		setIsVisible(!isVisible);
+	}
 
     const RegisterUser = async ()=>{
         try {
@@ -16,10 +29,14 @@ const SignUpButton = ({email,password}) => {
 				email,
 				password,
 			);
-			onToggleSnackbar();
+			SuccessPopup();
 		} catch (error) {
-			
-			
+			if(error.code === 'auth/email-already-in-use'){
+				AlreadyPopup();
+			}
+			if (error.code === 'auth/invalid-email') {
+				InvalidPopup();
+			  }
 		}
     }
 
@@ -41,7 +58,7 @@ const SignUpButton = ({email,password}) => {
 				<Snackbar
 					visible={isVisible}
 					onDismiss={onDismissSnackBar}>
-					Registered successfully!
+					{message}
 				</Snackbar>
 			</Portal>
 		</View>

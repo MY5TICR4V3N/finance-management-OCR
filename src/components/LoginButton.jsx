@@ -8,8 +8,11 @@ import {View, Text} from 'react-native';
 
 const LoginButton = ({buttonName, navigation, email, password}) => {
 	const [isVisible, setIsVisible] = useState(false);
+	const [message,setMessage] = useState('');
 	const onDismissSnackBar = () => setIsVisible(false);
-	const onToggleSnackbar = () => setIsVisible(!isVisible);
+	const onToggleSnackbar = () => {
+		setMessage("Email is Invalid");
+		setIsVisible(!isVisible);}
 
 	const CheckLogin = async () => {
 		try {
@@ -19,8 +22,9 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 			);
 			navigation.navigate('users');
 		} catch (error) {
-			// console.log(error);
-			onToggleSnackbar();
+			if (error.code === 'auth/invalid-email') {
+				onToggleSnackbar();
+			  }
 		}
 	};
 
@@ -40,7 +44,7 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 				<Snackbar
 					visible={isVisible}
 					onDismiss={onDismissSnackBar}>
-					Invalid Email/Password
+					{message}
 				</Snackbar>
 			</Portal>
 		</View>
