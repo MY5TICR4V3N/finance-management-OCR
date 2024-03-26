@@ -15,10 +15,6 @@ const LoginPage = ({navigation}) => {
     const [password,SetPassword] = useState()
     // const [loading,setLoading] = useState(false)
 
-
-
-
-
 	const setVisiblity = () => {
 		setIsVisible(!isVisible);
 	};

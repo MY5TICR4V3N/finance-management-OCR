@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
+import { Text, View, SafeAreaView, Image} from 'react-native';
 import WhiteStatus from '../components/WhiteStatus';
 import {TextInput, Button} from 'react-native-paper';
 import SignUpButton from '../components/SignUpButton';
@@ -7,6 +7,10 @@ import styles from '../styles/SignUpPageStyles';
 
 const SignUpPage = ({navigation}) => {
 	const [isVisible, setIsVisible] = useState(false);
+
+    //authentication stuff
+    const [email,SetEmail] = useState('')
+    const [password,SetPassword] = useState()
 
 	const setVisiblity = () => {
 		setIsVisible(!isVisible);
@@ -28,12 +32,17 @@ const SignUpPage = ({navigation}) => {
 				<Text style={[styles.NamePass, {marginTop: 9}]}>
 					Email
 				</Text>
-				<TextInput />
+				<TextInput 
+                value={email}
+                onChangeText={text => SetEmail(text)}
+                />
 				<Text style={[styles.NamePass, {marginTop: 9}]}>
 					Password
 				</Text>
 				<TextInput
 					secureTextEntry={!isVisible}
+                    value = {password}
+                    onChangeText={text => SetPassword(text)}
 					right={
 						<TextInput.Icon
 							icon={
@@ -51,14 +60,20 @@ const SignUpPage = ({navigation}) => {
 					Service and Privacy Policy.
 				</Text>
 			</View>
-            <SignUpButton/>
+            <SignUpButton
+            
+            email={email}
+            password={password}
+            />
 			<Text
-				onPress={() => {
-					navigation.navigate('login');
-				}}
+				
 				style={styles.lastText}>
 				Already have an account?
-				<Text style={{color: '#53B175'}}> Log in</Text>
+				<Text 
+                onPress={() => {
+					navigation.navigate('login');
+				}}
+                style={{color: '#53B175'}}> Log in</Text>
 			</Text>
 		</SafeAreaView>
 	);

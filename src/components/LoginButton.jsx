@@ -7,9 +7,8 @@ import {Portal} from 'react-native-paper';
 import {View, Text} from 'react-native';
 
 const LoginButton = ({buttonName, navigation, email, password}) => {
-	
 	const [isVisible, setIsVisible] = useState(false);
-    const onDismissSnackBar = () => setIsVisible(false);
+	const onDismissSnackBar = () => setIsVisible(false);
 	const onToggleSnackbar = () => setIsVisible(!isVisible);
 
 	const CheckLogin = async () => {
@@ -37,14 +36,13 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 				onPress={CheckLogin}>
 				{buttonName}
 			</Button>
-            <Portal>
-  <Snackbar
-    visible={isVisible}
-    onDismiss={onDismissSnackBar}
- >
-    Invalid Email/Password
-  </Snackbar>
-</Portal>
+			<Portal>
+				<Snackbar
+					visible={isVisible}
+					onDismiss={onDismissSnackBar}>
+					Invalid Email/Password
+				</Snackbar>
+			</Portal>
 		</View>
 	);
 };
