@@ -7,6 +7,16 @@ import {Portal} from 'react-native-paper';
 import {View, Text} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const storeLogIn = async (value) => {
+	try {
+	  await AsyncStorage.setItem('isLoggedIn', value);
+	} catch (e) {
+	  
+	}
+  };
+
+  
+
 const LoginButton = ({buttonName, navigation, email, password}) => {
 	const [isVisible, setIsVisible] = useState(false);
 	const [message,setMessage] = useState('');
@@ -21,6 +31,7 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 				email,
 				password,
 			);
+			storeLogIn("true");
 			navigation.navigate('users');
 		} catch (error) {
 			if (error.code === 'auth/invalid-email') {

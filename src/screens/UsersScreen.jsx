@@ -11,7 +11,7 @@ import {
     TouchableOpacity
  } from 'react-native'
 import { Button } from 'react-native-paper'
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 const data = [
     {
         "id":"1",
@@ -48,6 +48,7 @@ const Item =({username,navigation}) => {
 
 }
 
+  
 const UsersScreen= ({navigation}) => {
     return (
 		<SafeAreaView style={{backgroundColor: 'white'}}>

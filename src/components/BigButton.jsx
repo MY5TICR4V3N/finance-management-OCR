@@ -1,8 +1,20 @@
 import React from "react";
 import { Button } from "react-native-paper";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const storeLogIn = async (value) => {
+	try {
+	  await AsyncStorage.setItem('isLoggedIn', value);
+	} catch (e) {
+	  
+	}
+  };
 
 const BigButton =({name,topage,navigation})=>{
+    const logOut=()=>{
+        storeLogIn("false");
+        navigation.navigate("first")
+    }
     return(
         <Button
         mode='outlined'
@@ -11,7 +23,7 @@ const BigButton =({name,topage,navigation})=>{
         height={60}
         labelStyle={{fontSize:18}}
         style={{justifyContent:"center"}}
-        onPress={()=>navigation.navigate(topage)}
+        onPress={logOut}
         >
             {name}
         </Button>
