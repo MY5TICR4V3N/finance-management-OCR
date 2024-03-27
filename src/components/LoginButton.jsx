@@ -5,6 +5,7 @@ import {useState} from 'react';
 import {Snackbar} from 'react-native-paper';
 import {Portal} from 'react-native-paper';
 import {View, Text} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoginButton = ({buttonName, navigation, email, password}) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -23,6 +24,7 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 			navigation.navigate('users');
 		} catch (error) {
 			if (error.code === 'auth/invalid-email') {
+				console.log(error.code)
 				onToggleSnackbar();
 			  }
 		}
