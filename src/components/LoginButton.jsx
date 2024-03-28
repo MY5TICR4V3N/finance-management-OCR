@@ -1,15 +1,19 @@
-import React from 'react';
-import {Button} from 'react-native-paper';
+import React,{useState} from 'react';
 import auth from '@react-native-firebase/auth';
-import {useState} from 'react';
-import {Snackbar} from 'react-native-paper';
-import {Portal} from 'react-native-paper';
+import {Snackbar,Portal,Button} from 'react-native-paper';
 import {View, Text} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const storeLogIn = async (value) => {
 	try {
 	  await AsyncStorage.setItem('isLoggedIn', value);
+	} catch (e) {
+	  
+	}
+  };
+  const storeEmail = async (value) => {
+	try {
+	  await AsyncStorage.setItem('email', value);
 	} catch (e) {
 	  
 	}
@@ -32,6 +36,7 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 				password,
 			);
 			storeLogIn("true");
+			storeEmail(email);
 			navigation.navigate('users');
 		} catch (error) {
 			if (error.code === 'auth/invalid-email') {

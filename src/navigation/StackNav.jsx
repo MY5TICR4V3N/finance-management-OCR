@@ -39,10 +39,10 @@ const StackNav = () => {
         };
 
         getLogin();
-    }, []); // Empty dependency array to run only once on component mount
+    }, []); 
 
     if (loginState === "loading") {
-        return <LoadingScreen />; // Render a loading screen while determining the login state
+        return <LoadingScreen />; 
     }
 
     return (
