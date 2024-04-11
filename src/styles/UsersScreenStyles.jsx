@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     headinhWrapper:{
         marginTop:25,
-        alignItems:"center"
+        alignItems:"center",
     },
     heading:{
         fontSize:27,
@@ -31,8 +31,10 @@ const styles = StyleSheet.create({
     editProf:{
 
         justifyContent:"space-evenly",
-        marginBottom:260,
+        
         flexDirection:"row",
+        
+        
         
     }
     

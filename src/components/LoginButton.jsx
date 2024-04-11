@@ -28,13 +28,13 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 	const onToggleSnackbar = () => {
 		setMessage("Email is Invalid");
 		setIsVisible(!isVisible);}
-
+		
 	const CheckLogin = async () => {
 		try {
 			await auth().signInWithEmailAndPassword(
 				email,
 				password,
-			);
+			)
 			storeLogIn("true");
 			storeEmail(email);
 			navigation.navigate('users');
@@ -45,6 +45,10 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 			  }
 		}
 	};
+	
+	const tempFn =()=>{
+		onToggleSnackbar();
+	}
 
 	return (
 		<View>
@@ -56,6 +60,7 @@ const LoginButton = ({buttonName, navigation, email, password}) => {
 				labelStyle={{fontSize: 18}}
 				style={{justifyContent: 'center'}}
 				onPress={CheckLogin}>
+				
 				{buttonName}
 			</Button>
 			<Portal>
