@@ -15,57 +15,40 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { firebase } from '@react-native-firebase/database';
 import LoadingScreen from './LoadingScreen';
 
+import UserListItem from '../components/UserListItem';
 const data = [];
 
 function replaceCharacters(str) {
 	return str.replace(/[@.]/g, '_');
   }
 
-const Item = ({username, navigation}) => {
-	return (
-		<View style={styles.profileContainer}>
-			<View>
-				<TouchableOpacity
-					style={styles.profileImageStyle}
-					onPress={() =>
-						navigation.navigate('list')
-					}>
-					<Image
-						source={require('../assets/images/defaultProfile.png')}
-					/>
-				</TouchableOpacity>
-			</View>
-
-			<Text style={styles.profileName}>{username}</Text>
-		</View>
-	);
-};
-
 const UsersScreen = ({navigation}) => {
 	
 	const [Loading,setLoading] = useState(true);
+	const [userData, setUserData] = useState([]);
+	const [RemoveMode,SetRemoveMode] = useState(false)
 
 	const fetchData = async () => {
 		try {
 			let email = await AsyncStorage.getItem('email');
-			email = replaceCharacters(email)
-			console.log(email);
+
+			email = replaceCharacters(email);
+
 			const reference = firebase
 				.app()
 				.database(
 					'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
 				)
 				.ref(`/users/${email}/profiles`);
+
 			await reference.once('value').then(snapshot => {
-				const profiles = snapshot.val()
-				console.log('User data: ', snapshot.val());
-				data.length= 0;
+				const profiles = snapshot.val();
+				// console.log('User data: ', snapshot.val());
+				data.length = 0;
 				for (const key in profiles) {
-					
-					
-					data.push({user:profiles[key]})
-					
-				  }
+					data.push({user: profiles[key]});
+				}
+				setUserData(data);
 			});
 		} catch (error) {
 			console.error('Error fetching user data:', error);
@@ -73,10 +56,70 @@ const UsersScreen = ({navigation}) => {
 			setLoading(false);
 		}
 	};
+
+	const removeData = async (DelUserName)=>{
+		console.log(DelUserName);
+
+	 try {
+		let email = await AsyncStorage.getItem('email');
+
+			email = replaceCharacters(email);
+
+			const reference = firebase
+				.app()
+				.database(
+					'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
+				)
+				.ref(`/users/${email}/profiles`);
+			reference.orderByValue()
+				.equalTo(DelUserName)
+				.once('value', function(snapshot) {
+					snapshot.forEach(function(childSnapshot) {
+					  const key = childSnapshot.key;
+					  console.log('Key for value "' + DelUserName + '": ' + key);
+					const childRef = firebase
+					.app()
+					.database(
+						'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
+					)
+					.ref(`/users/${email}/profiles/${key}`);
+					childRef.remove()
+						.then(() => {
+							// console.log('Key for value "' + valueToSearch + '" has been removed: ' + key);
+							let position = data.findIndex((user => user.user === DelUserName));
+							data.splice(position,1);
+							const copy = [...data]
+							copy.push(null)
+							setUserData(copy);
+							
+							
+						  })
+
+					});
+				});
+			
+				
+			// await reference.remove();
+			
+	 } catch(error) {
+		console.log(error);
+	 } finally {
+		
+	 }
+	}
+
+
 	useEffect(() => {
 		fetchData();
-	}, []);
+	}, [userData]);
 
+	const ToggleRemoveMode =() => {
+		if(RemoveMode===false) {
+			SetRemoveMode(true)
+		} else {
+			SetRemoveMode(false)
+		}
+	}
 	return (
 		<SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
 			{Loading ? (
@@ -91,11 +134,14 @@ const UsersScreen = ({navigation}) => {
 				</View>
 				<FlatList
 					scrollEnabled={false}
+					extraData={userData}
 					data={data}
 					renderItem={({item}) => (
-						<Item
+						<UserListItem
+							RemoveMode={RemoveMode}
 							username={item.user}
 							navigation={navigation}
+							delfn={removeData}
 						/>
 					)}
 					
@@ -105,11 +151,15 @@ const UsersScreen = ({navigation}) => {
 					}}
 				/>
 				<View style={styles.editProf}>
+					
 					<Button
 						mode="contained"
+						onPress={ToggleRemoveMode}
 						buttonColor="#24A19C">
 						Remove Users
 					</Button>
+
+
 					<Button
 						mode="contained"
 						buttonColor="#24A19C">
