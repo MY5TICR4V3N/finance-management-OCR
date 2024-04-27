@@ -13,7 +13,7 @@ const ListSubBar = ({ leftText, rightText }) => {
       <TouchableOpacity onPress={() => setModalShown(!isModalShown)}>
         <Text style={styles.rightText}>{rightText}</Text>
       </TouchableOpacity>
-      <Modal visible={isModalShown} transparent={true} animationType="fade">
+      <Modal visible={isModalShown} transparent={true}  animationType="fade">
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Text style={styles.modalHeading}>Add Item</Text>

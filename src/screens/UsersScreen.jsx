@@ -15,6 +15,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { firebase } from '@react-native-firebase/database';
 import LoadingScreen from './LoadingScreen';
 
+import AddUsersButton from '../components/AddUsersButton';
+
 import UserListItem from '../components/UserListItem';
 const data = [];
 
@@ -27,6 +29,7 @@ const UsersScreen = ({navigation}) => {
 	const [Loading,setLoading] = useState(true);
 	const [userData, setUserData] = useState([]);
 	const [RemoveMode,SetRemoveMode] = useState(false)
+	const [email,SetEmail] = useState();
 
 	const fetchData = async () => {
 		try {
@@ -43,13 +46,14 @@ const UsersScreen = ({navigation}) => {
 
 			await reference.once('value').then(snapshot => {
 				const profiles = snapshot.val();
-				// console.log('User data: ', snapshot.val());
+	
 				data.length = 0;
 				for (const key in profiles) {
 					data.push({user: profiles[key]});
 				}
 				setUserData(data);
 			});
+			SetEmail(email);
 		} catch (error) {
 			console.error('Error fetching user data:', error);
 		} finally {
@@ -58,7 +62,7 @@ const UsersScreen = ({navigation}) => {
 	};
 
 	const removeData = async (DelUserName)=>{
-		console.log(DelUserName);
+		// console.log(DelUserName);
 
 	 try {
 		let email = await AsyncStorage.getItem('email');
@@ -76,7 +80,7 @@ const UsersScreen = ({navigation}) => {
 				.once('value', function(snapshot) {
 					snapshot.forEach(function(childSnapshot) {
 					  const key = childSnapshot.key;
-					  console.log('Key for value "' + DelUserName + '": ' + key);
+					//   console.log('Key for value "' + DelUserName + '": ' + key);
 					const childRef = firebase
 					.app()
 					.database(
@@ -85,7 +89,7 @@ const UsersScreen = ({navigation}) => {
 					.ref(`/users/${email}/profiles/${key}`);
 					childRef.remove()
 						.then(() => {
-							// console.log('Key for value "' + valueToSearch + '" has been removed: ' + key);
+						
 							let position = data.findIndex((user => user.user === DelUserName));
 							data.splice(position,1);
 							const copy = [...data]
@@ -99,7 +103,7 @@ const UsersScreen = ({navigation}) => {
 				});
 			
 				
-			// await reference.remove();
+		
 			
 	 } catch(error) {
 		console.log(error);
@@ -159,12 +163,10 @@ const UsersScreen = ({navigation}) => {
 						Remove Users
 					</Button>
 
-
-					<Button
-						mode="contained"
-						buttonColor="#24A19C">
-						Add Users
-					</Button>
+					<AddUsersButton
+					email={email}
+					
+					/>
 				</View>
 			</View>
 
