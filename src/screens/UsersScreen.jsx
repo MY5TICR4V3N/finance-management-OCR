@@ -31,6 +31,13 @@ const UsersScreen = ({navigation}) => {
 	const [RemoveMode,SetRemoveMode] = useState(false)
 	const [email,SetEmail] = useState();
 
+	const rerend=()=> {
+		const copy = [...data]
+		copy.push(null)
+		setUserData(copy);
+	}
+
+
 	const fetchData = async () => {
 		try {
 			let email = await AsyncStorage.getItem('email');
@@ -92,10 +99,7 @@ const UsersScreen = ({navigation}) => {
 						
 							let position = data.findIndex((user => user.user === DelUserName));
 							data.splice(position,1);
-							const copy = [...data]
-							copy.push(null)
-							setUserData(copy);
-							
+							rerend();
 							
 						  })
 
@@ -165,6 +169,7 @@ const UsersScreen = ({navigation}) => {
 
 					<AddUsersButton
 					email={email}
+					rerend={rerend}
 					
 					/>
 				</View>

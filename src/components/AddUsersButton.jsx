@@ -4,7 +4,17 @@ import {Button, Portal, TextInput} from 'react-native-paper';
 import {Dialog} from '@rneui/base';
 import { firebase } from '@react-native-firebase/database';
 
-const AddUsersButton = ({email}) => {
+function generateRandomWord() {
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var randomWord = '';
+    for (var i = 0; i < 6; i++) {
+        randomWord += letters.charAt(Math.floor(Math.random() * letters.length));
+    }
+    return randomWord;
+}
+
+
+const AddUsersButton = ({email,rerend}) => {
 	const [AddMode, SetAddMode] = useState(false);
 	const [text, setText] = useState('');
 	const ToggleAddMode = () => {
@@ -13,15 +23,40 @@ const AddUsersButton = ({email}) => {
 		} else {
 			SetAddMode(false);
 		}
-		console.log(AddMode);
+		// console.log(AddMode);
 	};
 
 
 	const addProfilefucntion= async ()=> {
 
-		con
+		try {
+			keyToUpdate = generateRandomWord();
+		
+			const updateObject = {};
+			updateObject[keyToUpdate] = text;
+			console.log(text)
+			const reference = firebase
+				.app()
+				.database(
+					'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
+				)
+				.ref(`/users/${email}/profiles`)
+				.update(updateObject);
 
-		ToggleAddMode();
+		} catch (error) {
+			console.log(error);
+		} finally {
+			rerend();
+			ToggleAddMode();
+		}
+
+
+			
+			
+
+
+
+		
 	}
 	return (
 		<View>
@@ -32,7 +67,7 @@ const AddUsersButton = ({email}) => {
 						backgroundColor: 'white',
 						borderRadius:10
 					}}
-					onBackdropPress={addProfilefucntion}>
+					onBackdropPress={ToggleAddMode}>
 					<Dialog.Title
 						titleStyle={{
 							alignSelf: 'center',
@@ -49,7 +84,7 @@ const AddUsersButton = ({email}) => {
 					<Button
 					style={{marginTop:20,alignSelf:"center"}}
 					mode= "contained"
-					onPress={ToggleAddMode}
+					onPress={addProfilefucntion}
 					buttonColor="#24A19C"
 					>Add</Button>
 				</Dialog>
@@ -59,7 +94,7 @@ const AddUsersButton = ({email}) => {
 				onPress={() => {
 					ToggleAddMode();
 					setText("");
-					
+					// console.log(email)
 
 				}}
 				buttonColor="#24A19C">
