@@ -30,6 +30,7 @@ const UsersScreen = ({navigation}) => {
 	const [userData, setUserData] = useState([]);
 	const [RemoveMode,SetRemoveMode] = useState(false)
 	const [email,SetEmail] = useState();
+	const [removeButtonColor,SetremoveButtonColor] = useState("#24A19C");
 
 	const rerend=()=> {
 		const copy = [...data]
@@ -123,9 +124,11 @@ const UsersScreen = ({navigation}) => {
 
 	const ToggleRemoveMode =() => {
 		if(RemoveMode===false) {
+			SetremoveButtonColor("#750d31")
 			SetRemoveMode(true)
 		} else {
 			SetRemoveMode(false)
+			SetremoveButtonColor("#24A19C")
 		}
 	}
 	return (
@@ -163,7 +166,7 @@ const UsersScreen = ({navigation}) => {
 					<Button
 						mode="contained"
 						onPress={ToggleRemoveMode}
-						buttonColor="#24A19C">
+						buttonColor={removeButtonColor}>
 						Remove Users
 					</Button>
 
