@@ -5,15 +5,28 @@ import { Icon } from '@rneui/base';
 
 import styles from '../styles/ListSubBar1Styles';
 
+import { firebase } from '@react-native-firebase/database';
 
-const ListSubBar1 = ({ leftText, rightText }) => {
+const ListSubBar1 = ({ leftText, rightText,email }) => {
   const [isModalShown, setModalShown] = useState(false);
-
+  const [text,setText] = useState('');
   const [checked, setChecked] = useState('');
 
 
-  const AddtoDb =()=> {
-
+  const AddtoDb = ()=> {
+    const reference =  firebase
+    .app()
+    .database(
+      'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
+    )
+    .ref(`/users/${email}/items/`)
+    .push();
+    const newItemData = {
+      name: text,
+      category: checked
+    };
+    reference.set(newItemData);
+    
   }
 
 
@@ -23,15 +36,18 @@ const ListSubBar1 = ({ leftText, rightText }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.leftText}>{leftText}</Text>
-      <TouchableOpacity onPress={() => {setModalShown(!isModalShown);setChecked('')}}>
+      <TouchableOpacity onPress={() => {setModalShown(!isModalShown);setChecked('');setText('')}}>
         <Text style={styles.rightText}>{rightText}</Text>
       </TouchableOpacity>
       <Modal visible={isModalShown} transparent={true}  animationType="fade">
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Text style={styles.modalHeading}>Add Item</Text>
-            <TextInput placeholder='item name'/>
-            <Text> </Text>
+            <TextInput  style= {{marginBottom:9}} 
+            value={text}
+            onChangeText={text => setText(text)}
+            placeholder='item name'/>
+            
 
             <Text style={styles.cathead}>Choose Category</Text>
  <View>
@@ -59,7 +75,16 @@ const ListSubBar1 = ({ leftText, rightText }) => {
 
 
 
-            <TouchableOpacity onPress={() =>{ setModalShown(false);
+            <TouchableOpacity onPress={() =>{
+              if ((text==='')||(checked==='')) {
+                
+                setModalShown(false);
+              } else {
+                AddtoDb()
+                setModalShown(false);
+              }
+              
+              
               
             
             }} style={styles.close}>

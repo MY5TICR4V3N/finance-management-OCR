@@ -86,6 +86,7 @@ const ListView = ({navigation,route}) => {
       <ListSubBar1
 				leftText={'Family'}
 				rightText={'Add item'}
+				email={email}
 			/>
 			<View style={styles.liststyle}>
 
