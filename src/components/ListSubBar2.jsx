@@ -4,7 +4,7 @@ import { TextInput } from 'react-native-paper';
 import { Icon } from '@rneui/base';
 
 
-const ListSubBar = ({ leftText, rightText }) => {
+const ListSubBar2 = ({ leftText, rightText }) => {
   const [isModalShown, setModalShown] = useState(false);
 
   return (
@@ -90,4 +90,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ListSubBar;
+export default ListSubBar2;

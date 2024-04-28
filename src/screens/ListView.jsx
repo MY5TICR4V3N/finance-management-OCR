@@ -8,16 +8,18 @@ import {
 	FlatList,
 	ScrollView,
 } from 'react-native';
+
+
 import ListHead from '../components/ListHead';
-import ListSubBar from '../components/ListSubBar';
+import ListSubBar1 from '../components/ListSubBar1';
+import ListSubBar2 from '../components/ListSubBar2';
 import {CheckBox} from '@rneui/themed';
 
 //tab navigation
-import {useNavigation} from '@react-navigation/native';
-import {Button} from 'react-native-paper';
+// import {useNavigation} from '@react-navigation/native';
+// import {Button} from 'react-native-paper';
 
-//family list data
-const familydata = [{item: 'apple'}, {item: 'cake'}, {item: 'orange'}];
+
 // personal list data 
 const privatedata = [{item: 'water melon'}, {item: 'water bottle'}];
 
@@ -30,9 +32,9 @@ import FamilyList from '../components/FamilyList';
 // personal list
 import PersonalList from '../components/PersonalList';
 
-//fire base and local storage imports
+//fire base imports
 import { firebase } from '@react-native-firebase/database';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 function replaceCharacters(str) {
 	return str.replace(/[@.]/g, '_');
@@ -46,10 +48,7 @@ const ListView = ({navigation,route}) => {
 	
 
 	useEffect(() => {
-		// Set up real-time listener for Firebase updates
-		// const itemsRef = database(
-		// 	'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
-		// ).ref('items');
+
 		const itemsRef = firebase
 			.app()
 			.database(
@@ -84,7 +83,7 @@ const ListView = ({navigation,route}) => {
 				title={TopName.concat('List')}
 			/>
       <ScrollView>
-      <ListSubBar
+      <ListSubBar1
 				leftText={'Family'}
 				rightText={'Add item'}
 			/>
@@ -101,7 +100,7 @@ const ListView = ({navigation,route}) => {
 					)}
 				/>
 			</View>
-			<ListSubBar
+			<ListSubBar2
 				leftText={'Personal'}
 				rightText={'Add item'}
 			/>
