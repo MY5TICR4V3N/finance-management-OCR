@@ -4,11 +4,12 @@ import { TouchableOpacity,View,Image,Text } from "react-native";
 import styles from '../styles/UsersScreenStyles';
 import { firebase } from '@react-native-firebase/database';
 
-const UserListItem = ({username, navigation,RemoveMode,delfn}) => {
+const UserListItem = ({username, navigation,RemoveMode,delfn,email}) => {
 
     const PressAction=()=>{
         if(!RemoveMode) {
-            navigation.navigate('list');
+            navigation.navigate('list',{email : email});
+            
         }  else {
             // console.log(username);
             // removeFromDB();

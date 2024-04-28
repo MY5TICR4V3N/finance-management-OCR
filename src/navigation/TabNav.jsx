@@ -9,7 +9,11 @@ import Expense from "../screens/Expense";
 
 const Tab = createBottomTabNavigator();
 
-const TabNav = () => {
+const TabNav = ({route}) => {
+  const { email } = route.params;
+
+
+
   return (
     <Tab.Navigator
       initialRouteName="list"
@@ -21,6 +25,7 @@ const TabNav = () => {
       <Tab.Screen
         name="ListView"
         component={ListView}
+        initialParams={{email : email}}
         options={{
           headerShown: false,
 		  tabBarLabel:()=> null,

@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import WhiteStatus from '../components/WhiteStatus';
 import {
-	StyleSheet,
+	// StyleSheet,
 	SafeAreaView,
 	View,
-	Text,
+	// Text,
 	FlatList,
 	ScrollView,
 } from 'react-native';
@@ -16,39 +16,62 @@ import {CheckBox} from '@rneui/themed';
 import {useNavigation} from '@react-navigation/native';
 import {Button} from 'react-native-paper';
 
-//family list
+//family list data
 const familydata = [{item: 'apple'}, {item: 'cake'}, {item: 'orange'}];
-// personal list
+// personal list data 
 const privatedata = [{item: 'water melon'}, {item: 'water bottle'}];
 
 //styles 
 import styles from '../styles/ListViewStyles';
 
+// family list
+import FamilyList from '../components/FamilyList';
 
-const ListView = ({navigation}) => {
-	// const navigation = useNavigation();
+// personal list
+import PersonalList from '../components/PersonalList';
 
-	const [ispressed, setpressed] = useState(false);
+//fire base and local storage imports
+import { firebase } from '@react-native-firebase/database';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-	const Structure = ({itemname}) => {
-		return (
-			<View style={{flexDirection: 'row'}}>
-				<CheckBox
-					checked={ispressed}
-					onPress={() => {
-						setpressed(!ispressed);
-					}}
-					style={styles.checkboxStyle}
-					title={itemname}
-					size={24}
-					textStyle={styles.listTextStyle}
-					containerStyle={{
-						backgroundColor: 'transparent',
-					}}
-				/>
-			</View>
-		);
-	};
+function replaceCharacters(str) {
+	return str.replace(/[@.]/g, '_');
+  }
+
+
+const ListView = ({navigation,route}) => {
+	const [items,setItems] = useState([])
+	
+	const { email } = route.params;
+	
+
+	useEffect(() => {
+		// Set up real-time listener for Firebase updates
+		// const itemsRef = database(
+		// 	'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
+		// ).ref('items');
+		const itemsRef = firebase
+			.app()
+			.database(
+				'https://famcart-be20c-default-rtdb.asia-southeast1.firebasedatabase.app/',
+			)
+			.ref(`/users/${email}/items/`);
+
+		const handleData = snapshot => {
+		  if (snapshot.val()) {
+			const dataArray = Object.keys(snapshot.val()).map(key => ({ id: key, ...snapshot.val()[key] }));
+			setItems(dataArray);
+		  }
+		};
+	
+		itemsRef.on('value', handleData);
+	
+		// Cleanup function to remove the listener when component unmounts
+		return () => {
+		  itemsRef.off('value', handleData);
+		};
+	  }, []);
+
 
 	const TopName = ' ';
 	return (
@@ -66,12 +89,14 @@ const ListView = ({navigation}) => {
 				rightText={'Add item'}
 			/>
 			<View style={styles.liststyle}>
+
+				{/* code for the list */}
 				<FlatList
 				scrollEnabled={false}
-					data={familydata}
+					data={items}
 					renderItem={({item}) => (
-						<Structure
-							itemname={item.item}
+						<FamilyList
+							itemname={item.name}
 						/>
 					)}
 				/>
@@ -85,7 +110,7 @@ const ListView = ({navigation}) => {
 					data={privatedata}
 					scrollEnabled={false}
 					renderItem={({item}) => (
-						<Structure
+						<PersonalList
 							itemname={item.item}
 						/>
 					)}

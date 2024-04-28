@@ -153,6 +153,7 @@ const UsersScreen = ({navigation}) => {
 							username={item.user}
 							navigation={navigation}
 							delfn={removeData}
+							email={email}
 						/>
 					)}
 					
