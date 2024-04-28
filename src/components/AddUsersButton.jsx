@@ -34,7 +34,7 @@ const AddUsersButton = ({email,rerend}) => {
 		
 			const updateObject = {};
 			updateObject[keyToUpdate] = text;
-			console.log(text)
+			// console.log(text)
 			const reference = firebase
 				.app()
 				.database(

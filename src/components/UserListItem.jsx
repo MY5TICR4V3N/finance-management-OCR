@@ -18,8 +18,7 @@ const UserListItem = ({username, navigation,RemoveMode,delfn}) => {
 
    
 
-
-    console.log(RemoveMode)
+    // console.log(RemoveMode)
 	return (
 <View style={styles.profileContainer}>
 
