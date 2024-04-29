@@ -44,6 +44,10 @@ function replaceCharacters(str) {
 const ListView = ({navigation,route}) => {
 	const [items,setItems] = useState([])
 	
+
+	
+
+
 	const { email } = route.params;
 	
 
@@ -96,6 +100,7 @@ const ListView = ({navigation,route}) => {
 					data={items}
 					renderItem={({item}) => (
 						<FamilyList
+						email={email}
 							itemname={item.name}
 						/>
 					)}
@@ -117,7 +122,7 @@ const ListView = ({navigation,route}) => {
 				/>
 			</View>
       </ScrollView>
-
+	
 		</SafeAreaView>
 	);
 };
