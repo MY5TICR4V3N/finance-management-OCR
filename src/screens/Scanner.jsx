@@ -26,7 +26,7 @@ const Scanner = () => {
 		}
 	}, [hasPermission]);
 
-	const device = useCameraDevice('front');
+	const device = useCameraDevice('back');
   const camera = useRef(null);
 
   const { navigate } = useNavigation();
