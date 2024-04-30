@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     height:shutterSize,
     width:shutterSize,
     alignSelf:"center",
-    marginBottom:50,
+    marginBottom:"10%",
     borderRadius:shutterSize/2,
     borderWidth:2,
     borderColor:"black"

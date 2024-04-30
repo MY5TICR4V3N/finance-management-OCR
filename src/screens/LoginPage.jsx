@@ -1,12 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
+import {ScrollView, Text, View, SafeAreaView, Image,PixelRatio,} from 'react-native';
 import WhiteStatus from '../components/WhiteStatus';
 import {TextInput, Button} from 'react-native-paper';
 import {useState} from 'react';
 
 
+
 import LoginButton from '../components/LoginButton';
 import styles from '../styles/LoginPageStyles';
+
+const fontScale = PixelRatio.getFontScale();
+const getFontSize = size => size / fontScale;
+
 
 const LoginPage = ({navigation}) => {
 	const [isVisible, setIsVisible] = useState(false);
@@ -21,6 +26,7 @@ const LoginPage = ({navigation}) => {
 	return (
 		<SafeAreaView style={styles.pageWrapper}>
 			<WhiteStatus />
+			<ScrollView>
 			<Image
 				source={require('../assets/images/Carrot.png')}
 				style={styles.logo}
@@ -33,6 +39,7 @@ const LoginPage = ({navigation}) => {
 				<Text style={styles.NamePass}>Email</Text>
 				<TextInput
                 value={email}
+				style={{height:getFontSize(50)}}
                 onChangeText={text => SetEmail(text)}
                 />
 				<Text style={[styles.NamePass, {marginTop: 9}]}>
@@ -41,6 +48,7 @@ const LoginPage = ({navigation}) => {
 				<TextInput
 					secureTextEntry={!isVisible}
                     value = {password}
+					style={{height:getFontSize(50)}}
                     onChangeText={text => SetPassword(text)}
 					right={
 						<TextInput.Icon
@@ -77,6 +85,7 @@ const LoginPage = ({navigation}) => {
 					Signup
 				</Text>
 			</Text>
+			</ScrollView>
 		</SafeAreaView>
 	);
 };

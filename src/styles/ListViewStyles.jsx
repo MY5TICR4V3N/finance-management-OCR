@@ -6,18 +6,20 @@ import { StyleSheet } from "react-native";
 		backgroundColor: '#A0AAB852',
 		minHeight: 150,
 		borderRadius: 25,
-		marginLeft: 29,
-		marginRight: 28,
-		padding: 10,
+		marginLeft: "5%",
+		marginRight: "5%",
+		padding: "3%",
 	},
 	listTextStyle: {
-		alignSelf: 'center',
+		// alignSelf: 'center',
+		marginTop:"-3%",
 		fontFamily: 'GentiumBold',
 		fontSize: 20,
 		color: '#000000',
+		
 	},
 	checkboxStyle: {
-		// backgroundColor:"red"
+		// backgroundColor:"yellow"
 	},
  })
 

@@ -7,6 +7,7 @@ import {
 	Text,
 	FlatList,
 	Image,
+	ScrollView,
 	TouchableOpacity,
 } from 'react-native';
 import {Button} from 'react-native-paper';
@@ -133,6 +134,7 @@ const UsersScreen = ({navigation}) => {
 	}
 	return (
 		<SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
+			<ScrollView>
 			{Loading ? (
 				<LoadingScreen />
 			) : ( 
@@ -159,7 +161,7 @@ const UsersScreen = ({navigation}) => {
 					
 					style={{
 						alignSelf: 'center',
-						marginTop: 60,
+						marginTop: "15%",
 					}}
 				/>
 				<View style={styles.editProf}>
@@ -180,7 +182,7 @@ const UsersScreen = ({navigation}) => {
 			</View>
 
 			 )}
-			
+			</ScrollView>
 		</SafeAreaView>
 	);
 };

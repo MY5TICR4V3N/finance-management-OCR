@@ -21,7 +21,7 @@ import {CheckBox} from '@rneui/themed';
 
 
 // personal list data 
-const privatedata = [{item: 'water melon'}, {item: 'water bottle'}];
+const privatedata = [{item: 'watermelon'},];
 
 //styles 
 import styles from '../styles/ListViewStyles';

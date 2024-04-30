@@ -6,7 +6,7 @@ import ListHead from "../components/ListHead";
 const Expense =({navigation})=>{
     const Space = " "
     return(
-        <SafeAreaView style={{backgroundColor:"white"}}>
+        <SafeAreaView style={{backgroundColor:"white",flex:1}}>
             <WhiteStatus/>
             <ListHead 
             navigation={navigation}

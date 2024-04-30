@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "react-native-paper";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { PixelRatio } from "react-native";
 
 const storeLogIn = async (value) => {
 	try {
@@ -9,6 +10,11 @@ const storeLogIn = async (value) => {
 	  
 	}
   };
+
+
+  // this is the log out button
+  const fontScale = PixelRatio.getFontScale();
+  const getFontSize = size => size / fontScale;
 
 const BigButton =({name,topage,navigation})=>{
     const logOut=()=>{
@@ -20,8 +26,9 @@ const BigButton =({name,topage,navigation})=>{
         mode='outlined'
         buttonColor='#24A19C'
         textColor='white'
-        height={60}
-        labelStyle={{fontSize:18}}
+        
+        height={"31%"}
+        labelStyle={{fontSize:getFontSize(18)}}
         style={{justifyContent:"center"}}
         onPress={logOut}
         >

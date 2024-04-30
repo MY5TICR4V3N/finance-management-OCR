@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
 
+
 const styles = StyleSheet.create({
     headinhWrapper:{
-        marginTop:25,
+        marginTop:"10%",
         alignItems:"center",
     },
     heading:{
@@ -12,13 +13,13 @@ const styles = StyleSheet.create({
     },
     profileContainer:{
         alignItems:"center",
-        marginBottom:25,
+        marginBottom:"5%",
         
 
     },
     profileImageStyle:{
         
-        width: "100%",
+        // width: "100%",
         borderRadius: 150 / 2,
         overflow: "scroll",
     },
@@ -26,7 +27,10 @@ const styles = StyleSheet.create({
         fontFamily:"OpenSansBold",
         color:"black",
         fontSize:18,
-        marginTop:10
+        marginTop:"2%",
+        // marginBottom:"10%"
+        paddingTop:"2%",
+        paddingBottom:"2%"
     },
     editProf:{
 

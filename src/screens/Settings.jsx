@@ -4,12 +4,15 @@ import {
     View,
     Image,
     Text,
+    PixelRatio,
     StyleSheet
  } from "react-native";
 import WhiteStatus from '../components/WhiteStatus'
 import { Divider } from "react-native-paper";
 import BigButton from "../components/BigButton";
 import SettingsItem from "../components/SettingsItem";
+
+
 
 const Settings=({navigation})=>{
     return (
@@ -52,13 +55,13 @@ const Settings=({navigation})=>{
 
 const styles= StyleSheet.create({
     headWrapper:{
-        marginTop:30,
-        marginLeft:20,
+        marginTop:"6%",
+        marginLeft:"5%",
         flexDirection:"row",
-        marginBottom:15
+        marginBottom:"4%"
     },
     imageStyle:{
-        marginRight:30
+        marginRight:"6%"
         
     },
     textstyles:{
@@ -80,7 +83,7 @@ const styles= StyleSheet.create({
         overflow: 'hidden',
       },
     buttonWrapper:{
-        marginHorizontal:20,
+        marginHorizontal:"4%",
         marginTop:"30%",
         flexDirection:"column",
         // backgroundColor:"red",

@@ -1,4 +1,5 @@
 import React from "react";
+import { PixelRatio } from "react-native";
 import { StyleSheet } from "react-native";
 
 
@@ -6,8 +7,8 @@ const styles = StyleSheet.create({
     container: {
       flexDirection: 'row',
       justifyContent: 'space-between',
-      paddingHorizontal: 20,
-      marginTop: 20,
+      paddingHorizontal: "5%",
+      marginTop: "10%",
     },
     leftText: {
       textAlign: 'left',
@@ -27,6 +28,8 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
+
+    // for some reason the model content does not work but dont remove it 
     modalContent: {
       backgroundColor: 'white',
       padding: 20,
@@ -40,7 +43,7 @@ const styles = StyleSheet.create({
     },
     modalHeading:{
       alignSelf:"center",
-      marginBottom:15,
+      marginBottom:"4%",
       fontFamily:"OpenSansBold",
       fontSize:29,
       color:"#000000"
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
       backgroundColor:"#EA6A6A",
       alignSelf:"center",
       borderRadius:10,
-      marginTop:10,
+      marginTop:"3%",
       alignItems:"center",
       justifyContent:"center"
     },

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
+import {View,Text} from 'react-native';
 import {CheckBox} from '@rneui/themed';
 
 import {Dialog} from '@rneui/base';
@@ -18,7 +18,7 @@ const FamilyList = ({itemname, email}) => {
 	const [strikeThrough, setStrikeThrough] = useState('none');
 
 	const [isVisible, setVisible] = useState(false);
-	const [catName, setCatname] = useState('');
+	// const [catName, setCatname] = useState('');
 	const [CatValue, setCatValue] = useState();
 	const [price, setPrice] = useState();
 
@@ -156,7 +156,9 @@ const FamilyList = ({itemname, email}) => {
 	};
 
 	return (
-		<View style={{flexDirection: 'row'}}>
+		<View style={{flexDirection: 'row',alignItems:"center",
+		// backgroundColor:"red"
+		}}>
 			<CheckBox
 				checked={ispressed}
 				onPress={() => {
@@ -174,8 +176,12 @@ const FamilyList = ({itemname, email}) => {
 				]}
 				containerStyle={{
 					backgroundColor: 'transparent',
+					// borderWidth:0,
+					// padding:0,
 				}}
 			/>
+		
+			
 			<Dialog
 				isVisible={isVisible}
 				overlayStyle={{
@@ -185,7 +191,7 @@ const FamilyList = ({itemname, email}) => {
 				onBackdropPress={() => {
 					setVisible(false);
 					newer = 0;
-					ispressed(false);
+					setpressed(false);
 				}}>
 				<Dialog.Title
 					titleStyle={{
@@ -200,7 +206,7 @@ const FamilyList = ({itemname, email}) => {
 				/>
 				<Button
 					style={{
-						marginTop: 20,
+						marginTop: "8%",
 						alignSelf: 'center',
 					}}
 					mode="contained"

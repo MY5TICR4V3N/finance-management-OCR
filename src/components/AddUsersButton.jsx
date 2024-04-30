@@ -82,7 +82,7 @@ const AddUsersButton = ({email,rerend}) => {
 						}
 					/>
 					<Button
-					style={{marginTop:20,alignSelf:"center"}}
+					style={{marginTop:"8%",alignSelf:"center"}}
 					mode= "contained"
 					onPress={addProfilefucntion}
 					buttonColor="#24A19C"

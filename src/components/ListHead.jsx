@@ -9,7 +9,7 @@ import {Appbar} from 'react-native-paper';
 const ListHead = ({navigation,topage,title}) => {
 //   const {topSpace} = props;
   return (
-    <View style={{marginTop: 20}}>
+    <View style={{marginTop: "5%"}}>
       {/* <StatusBar backgroundColor={'#FFFFFF'} barStyle={'dark-content'} /> */}
       <Appbar.Header mode="center-aligned" style={styles.barstyle}>
         <Appbar.Content title={title} titleStyle={styles.title} />
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         fontSize:32,
         color:'#000000',
         fontFamily:"OpenSansBold",
-        paddingTop:10
+        paddingTop:"3%"
       },
       barstyle:{
         height:40,

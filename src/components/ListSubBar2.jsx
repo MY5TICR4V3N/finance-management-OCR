@@ -39,8 +39,8 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 20,
-    marginTop: 20,
+    paddingHorizontal: "5%",
+    marginTop: "8%",
   },
   leftText: {
     textAlign: 'left',
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   modalHeading:{
     alignSelf:"center",
-    marginBottom:15,
+    marginBottom:"4%",
     fontFamily:"OpenSansBold",
     fontSize:29,
     color:"#000000"
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor:"#EA6A6A",
     alignSelf:"center",
     borderRadius:10,
-    marginTop:10,
+    marginTop:"3%",
     alignItems:"center",
     justifyContent:"center"
   }

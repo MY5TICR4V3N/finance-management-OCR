@@ -1,52 +1,57 @@
 import { StyleSheet } from "react-native";
+import { PixelRatio } from "react-native";
+
+
+const fontScale = PixelRatio.getFontScale();
+const getFontSize = size => size / fontScale;
 
 
 const styles = StyleSheet.create({
 	logo: {
 		marginTop: '10%',
-		height: 80,
-		width: 80,
+		height: "9%",
+		width: "14%",
 		alignSelf: 'center',
 		resizeMode: 'contain',
 	},
 	loginWrapper: {
-		marginLeft: 21,
+		marginLeft: "5%",
 		// backgroundColor:"red",
-		marginTop: 66,
+		marginTop: "20%",
 	},
 	login: {
-		fontSize: 35,
+		fontSize: getFontSize(35),
 		fontFamily: 'OpenSansSemiBold',
 		color: 'black',
-		marginBottom: 5,
+		marginBottom: "1%",
 	},
 	loginDesc: {
 		fontFamily: 'OpenSans',
-		fontSize: 19,
+		fontSize: getFontSize(19),
 		color: '#7C7C7C',
-		marginBottom: 18,
+		marginBottom: "4%",
 	},
 	NamePass: {
 		fontFamily: 'OpenSansBold',
-		fontSize: 18,
+		fontSize: getFontSize(18),
 		color: '#7C7C7C',
 	},
 	forget: {
 		fontStyle: 'italic',
 		alignSelf: 'flex-end',
 		fontFamily: 'OpenSansLight',
-		marginTop: 18,
-		fontSize: 17,
-		marginRight: 10,
+		marginTop: "4%",
+		fontSize: getFontSize(17),
+		marginRight: "2%",
 	},
 	buttonWrapper: {
-		marginTop: 47,
-		marginLeft: 10,
-		marginRight: 10,
+		marginTop: "20%",
+		marginLeft: "2%",
+		marginRight: "2%",
 	},
 
 	lastText: {
-		marginTop: 15,
+		marginTop: "8%",
 		alignSelf: 'center',
 		fontFamily: 'OpenSansBold',
 		color: '#181725',

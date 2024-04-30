@@ -66,8 +66,8 @@ const SignUpButton = ({email,password}) => {
 };
 const styles = StyleSheet.create({
 	buttonWrapper: {
-		marginTop: 47,
-		marginHorizontal: 10,        
+		marginTop: "13%",
+		marginHorizontal: "3%",        
 	},
     buttonstyle: {
 		justifyContent: 'center',

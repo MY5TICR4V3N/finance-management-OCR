@@ -17,21 +17,20 @@ const UserListItem = ({username, navigation,RemoveMode,delfn,email}) => {
         }
     }
 
-   
-
+ 
     // console.log(RemoveMode)
 	return (
 <View style={styles.profileContainer}>
 
        
             <TouchableOpacity
-                style={styles.profileImageStyle}
+                style={[styles.profileImageStyle,{}]}
                 onPress={() => {PressAction()}}>
                 <Image
                     source={require('../assets/images/defaultProfile.png')}
                 />
             </TouchableOpacity>
-            <Text style={styles.profileName}>{username}</Text>
+            <Text style={[styles.profileName]}>{username}</Text>
        
   
 </View>

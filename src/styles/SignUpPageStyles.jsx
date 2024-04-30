@@ -3,27 +3,27 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     logo: {
 		marginTop: '10%',
-		height: 80,
-		width: 80,
+		height: "9%",
+		width: "14%",
 		alignSelf: 'center',
 		resizeMode: 'contain',
 	},
 	loginWrapper: {
-		marginLeft: 21,
+		marginLeft: "5%",
 		// backgroundColor:"red",
-		marginTop: 66,
+		marginTop: "20%",
 	},
 	login: {
 		fontSize: 35,
 		fontFamily: 'OpenSansSemiBold',
 		color: 'black',
-		marginBottom: 5,
+		marginBottom: "1%",
 	},
 	loginDesc: {
 		fontFamily: 'OpenSansLightItalic',
 		fontSize: 19,
 		color: '#7C7C7C',
-		marginBottom: 18,
+		marginBottom: "4%",
 		// fontStyle:"italic"
 	},
 	NamePass: {
@@ -35,9 +35,9 @@ const styles = StyleSheet.create({
 		// fontStyle:"italic",
 		alignSelf: 'flex-start',
 		fontFamily: 'OpenSansLightItalic',
-		marginTop: 18,
+		marginTop: "3%",
 		fontSize: 17,
-		marginRight: 10,
+		marginRight: "3%",
 	},
 	buttonWrapper: {
 		marginTop: 47,
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 	},
 
 	lastText: {
-		marginTop: 15,
+		marginTop: "3%",
 		alignSelf: 'center',
 		fontFamily: 'OpenSansBold',
 		color: '#181725',
