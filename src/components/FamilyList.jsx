@@ -73,13 +73,13 @@ const FamilyList = ({itemname, email}) => {
 										] !==
 											undefined
 									) {
-										console.log(
-											`${item.category}  pre value: `,
-											userData[
-												item
-													.category
-											],
-										);
+										// console.log(
+										// 	`${item.category}  pre value: `,
+										// 	userData[
+										// 		item
+										// 			.category
+										// 	],
+										// );
 										newer =
 											Number(
 												price,
@@ -92,10 +92,10 @@ const FamilyList = ({itemname, email}) => {
 											);
 									
 
-										console.log(
-											`${item.category} new value: `,
-											newer,
-										);
+										// console.log(
+										// 	`${item.category} new value: `,
+										// 	newer,
+										// );
 										firestore()
 											.collection(
 												'users',

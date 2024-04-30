@@ -45,7 +45,7 @@ const UsersScreen = ({navigation}) => {
 			let email = await AsyncStorage.getItem('email');
 
 			email = replaceCharacters(email);
-
+			
 			const reference = firebase
 				.app()
 				.database(
@@ -66,7 +66,9 @@ const UsersScreen = ({navigation}) => {
 		} catch (error) {
 			console.error('Error fetching user data:', error);
 		} finally {
+			// console.log(email)
 			setLoading(false);
+
 		}
 	};
 

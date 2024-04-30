@@ -35,6 +35,7 @@ const TabNav = ({route}) => {
       <Tab.Screen
         name="Scanner"
         component={Scanner}
+        initialParams={{email : email}}
         options={{
           
           headerShown: false,
@@ -45,6 +46,7 @@ const TabNav = ({route}) => {
       <Tab.Screen
         name="Expense"
         component={Expense}
+        initialParams={{email : email}}
         options={{
           headerShown: false,
 		  tabBarLabel:()=> null,
