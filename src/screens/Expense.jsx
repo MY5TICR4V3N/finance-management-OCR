@@ -117,9 +117,6 @@ const Expense = ({navigation, route}) => {
 	useEffect(() => {
 		setTotal((entertainmentsDatas+foodDatas+othersDatas+medicineDatas))
 		setTotal(parseFloat(entertainmentsDatas+foodDatas+othersDatas+medicineDatas).toFixed(2))
-		
-	
-
 
 		// console.log(typeof(total)); // Log the updated datas state
 	}, [entertainmentsDatas,foodDatas,othersDatas,medicineDatas]);
@@ -181,12 +178,10 @@ const Expense = ({navigation, route}) => {
 				{/* <View > */}
 					<PieChart
 						donut
-						// isThreeD
+						
 
 						radius={getFontSize(160)}
-						// textSize={20}
-						// showTextBackground
-						// textBackgroundRadius={26}
+					
 						data={pieData}
 					/>
 					
@@ -203,7 +198,7 @@ const Expense = ({navigation, route}) => {
 							style={{paddingRight:"3%"}}
 							color="#FFFF33"
 							></Icon>
-						<Text style={[styles.textStyle,]} >entertainment   </Text>
+						<Text style={[styles.textStyle,{alignItems:"center",paddingBottom:"1%"}]} >entertainment   </Text>
 						</View>
 						<View style={{flexDirection:"row",marginBottom:"2%",}} >
 						<Icon
@@ -212,7 +207,7 @@ const Expense = ({navigation, route}) => {
 							style={{paddingRight:"3%"}}
 							color="#3366FF"
 							></Icon>
-							<Text style={[styles.textStyle,]} >food </Text>
+							<Text style={[styles.textStyle,{paddingBottom:"1%"}]} >food </Text>
 						</View  >
 						<View  style={{flexDirection:"row",marginBottom:"2%"}} >
 						<Icon
@@ -221,7 +216,7 @@ const Expense = ({navigation, route}) => {
 							style={{paddingRight:"3%"}}
 							color="#33FF77"
 							></Icon>
-							<Text style={[styles.textStyle,]} >medicine </Text>
+							<Text style={[styles.textStyle,{paddingBottom:"1%"}]} >medicine </Text>
 						</View>
 						<View  style={{flexDirection:"row",marginBottom:"2%"}} >
 						<Icon
@@ -240,9 +235,9 @@ const Expense = ({navigation, route}) => {
 					<View style={{flexDirection:"column",flex:1,alignSelf:"flex-start"}} >
 						
 					<Text style={[styles.textStyle,{textAlign:"left",marginBottom:"2%",marginTop:"3%"}]} >{entertainmentsDatas} </Text>
-					<Text style={[styles.textStyle,{textAlign:"left",marginBottom:"2%",paddingTop:"2%"}]} >{foodDatas}</Text>
-					<Text style={[styles.textStyle,{textAlign:"left",marginBottom:"2%"}]} >{medicineDatas}</Text>
-					<Text style={[styles.textStyle,{textAlign:"left",marginBottom:"2%"}]} >{othersDatas}</Text>
+					<Text style={[styles.textStyle,{textAlign:"left",marginBottom:"2%",paddingTop:"4%"}]} >{foodDatas}</Text>
+					<Text style={[styles.textStyle,{textAlign:"left",marginBottom:"2%",paddingTop:"6%"}]} >{medicineDatas}</Text>
+					<Text style={[styles.textStyle,{textAlign:"left",marginBottom:"2%",paddingTop:"5.5%"}]} >{othersDatas}</Text>
 					</View>
 				</View>
 				<Text
@@ -287,7 +282,7 @@ const styles = StyleSheet.create({
 		fontFamily:"OpenSansBold"
 	},
 	TextContainer :{
-		marginHorizontal:"18%",
+		marginHorizontal:"13%",
 		marginTop:"10%",
 		// backgroundColor:"red",
 		flex:1,
