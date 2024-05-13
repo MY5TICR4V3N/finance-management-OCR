@@ -5,71 +5,56 @@
 
 <p style= "text-align:center" ><b>streamline family shopping and expense tracking</p>
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+<p align="center" >
+  <img src="https://img.shields.io/github/commit-activity/t/binoy-ce/finance-management-OCR">
+  <img src="https://img.shields.io/github/last-commit/binoy-ce/finance-management-OCR">
+</p>
 
-To start Metro, run the following command from the _root_ of your React Native project:
+<p align="center">
+   <img src="   https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+   <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black">
+   <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+</p>
+<br>
+
+<p align="center">
+   <img src="https://www.dropbox.com/scl/fi/rtm5dp2ij3ann85hvzhan/loading.jpg?rlkey=k8lhjc90jr57g2l3fj92l49kw&st=g7534ds4&dl=1" 
+   width="24%"
+   height="auto">
+   <img src="https://www.dropbox.com/scl/fi/umxbpv6m72el5j8ula3wy/list.png?rlkey=t6nm2bshgayt31doneqhahx31&st=thrzrezs&dl=1" 
+   width="24%"
+   height="auto">
+   <img src="https://www.dropbox.com/scl/fi/ma0bqxse2p0s5ensnaxp9/scan.png?rlkey=plohvg5vw4m3vw4axum14y3b2&st=6jmnm152&dl=1" 
+   width="24%"
+   height="auto">
+   <img src="https://www.dropbox.com/scl/fi/alk37901yr70lmhpywecm/graph.png?rlkey=eh0akwlpmzukuwb2uucyqn93e&st=crise786&dl=1" 
+   width="24%"
+   height="auto">
+</p>
+
+
+## Build it Yourself
 
 ```bash
-# using npm
+# Clone this repo
+git clone https://github.com/binoy-ce/finance-management-OCR.git
+# Move to repo directory
+cd finance-management-OCR
+# Install dependencies
+npm install
+# Run the app
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Start your Application
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-### For Android
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
+## Troubleshooting
 
 If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
-# Learn More
+## Learn More
 
 To learn more about React Native, take a look at the following resources:
 
