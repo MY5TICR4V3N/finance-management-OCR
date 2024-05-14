@@ -1,7 +1,7 @@
 <p align="center">
   <img src="src\assets\images\Carrot.png" />
 </p>
-<h1 style="text-align: center;">FamCart</h1>
+<h1 style="text-align: center">FamCart</h1>
 
 <p style= "text-align:center" ><b>streamline family shopping and expense tracking</p>
 
@@ -34,7 +34,7 @@
 </p>
 
 
-## Build it Yourself
+## &#x1F528;Build it Yourself
 
 ```bash
 # Clone this repo
@@ -47,13 +47,25 @@ npm install
 npm start
 ```
 
+### &#x1F525;Configure FireBase Backend
+
+- Go to [FireBase Console](https://console.firebase.google.com/) and create a new project. 
+- Create a new android app and download `google-services.json`
+- Put the `google-services.json` to android/app directory in the react-native project
+- Eneble realtime database,FireStore and Authentication functions
+- Get the url of the realtime database and paste it in the database function used in FamilyList.jsx , UsersScreen.jsx and ListView.jsx
 
 
 
-## Troubleshooting
+## &#x1F527;Troubleshooting
 
 If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
+## &#x1F64B;Contributing
+
+If you find a bug, or if you have an idea for this app, email me personally at binoychullikkal@protonmail.com  We really appreciate feedback and inputs!
+
+ 
 ## Learn More
 
 To learn more about React Native, take a look at the following resources:
