@@ -1,9 +1,11 @@
 <p align="center">
   <img src="src\assets\images\Carrot.png" />
 </p>
-<h1 style="text-align: center">FamCart</h1>
+<h1 align="center">
+FamCart
+</h1>
 
-<p style= "text-align:center" ><b>streamline family shopping and expense tracking</p>
+<p  align="center" ><b>streamline family shopping and expense tracking</p>
 
 
 <p align="center" >
@@ -12,7 +14,7 @@
 </p>
 
 <p align="center">
-   <img src="   https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+   <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
    <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black">
    <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
 </p>
