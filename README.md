@@ -20,19 +20,11 @@ FamCart
 </p>
 <br>
 
-<p align="center">
-   <img src="https://www.dropbox.com/scl/fi/rtm5dp2ij3ann85hvzhan/loading.jpg?rlkey=k8lhjc90jr57g2l3fj92l49kw&st=g7534ds4&dl=1" 
-   width="24%"
-   height="auto">
-   <img src="https://www.dropbox.com/scl/fi/umxbpv6m72el5j8ula3wy/list.png?rlkey=t6nm2bshgayt31doneqhahx31&st=thrzrezs&dl=1" 
-   width="24%"
-   height="auto">
-   <img src="https://www.dropbox.com/scl/fi/ma0bqxse2p0s5ensnaxp9/scan.png?rlkey=plohvg5vw4m3vw4axum14y3b2&st=6jmnm152&dl=1" 
-   width="24%"
-   height="auto">
-   <img src="https://www.dropbox.com/scl/fi/alk37901yr70lmhpywecm/graph.png?rlkey=eh0akwlpmzukuwb2uucyqn93e&st=crise786&dl=1" 
-   width="24%"
-   height="auto">
+<p float="left">
+  <img src="https://www.dropbox.com/scl/fi/rtm5dp2ij3ann85hvzhan/loading.jpg?rlkey=k8lhjc90jr57g2l3fj92l49kw&st=g7534ds4&dl=1" width="24%" />
+  <img src="https://www.dropbox.com/scl/fi/umxbpv6m72el5j8ula3wy/list.png?rlkey=t6nm2bshgayt31doneqhahx31&st=thrzrezs&dl=1" width="24%" /> 
+  <img src="https://www.dropbox.com/scl/fi/ma0bqxse2p0s5ensnaxp9/scan.png?rlkey=plohvg5vw4m3vw4axum14y3b2&st=6jmnm152&dl=1" width="24%" />
+  <img src="https://www.dropbox.com/scl/fi/alk37901yr70lmhpywecm/graph.png?rlkey=eh0akwlpmzukuwb2uucyqn93e&st=crise786&dl=1" width="24%" />
 </p>
 
 
